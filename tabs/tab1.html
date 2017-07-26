@@ -1,0 +1,51 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>tab1</title>
+    <style type="text/css">
+    *{ padding: 0; margin: 0;}
+    li{ list-style-type: none;}
+    body{ margin: 50px;}
+    .hide{ display: none;}
+    .tabTitle ul{ overflow: hidden; _height:1px;}
+    .tabTitle ul li{ float: left; border: 1px solid #abcdef; border-bottom: none; height: 30px; line-height: 30px; padding: 0 15px; margin-right: 3px; cursor:pointer;}
+    .current{ background: #abcdef; color:#fff;}
+    .tabContent div{ border: 1px solid #f60; width: 300px; height: 250px; padding: 15px;}
+    </style>
+    </head>
+    <body>
+    <!-- 这里是标签标题 -->
+    <div class="tabTitle">
+      <ul>
+        <li class="current">xhtml</li>
+        <li>css</li>
+        <li>jquery</li>
+      </ul>
+    </div>
+    <div class="tabContent">
+      <div>xhtml的内容</div>
+      <div class="hide">css的内容</div>
+      <div class="hide">jquery的内容</div>
+    </div>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      var ali = $('.tabTitle ul li');
+      var aDiv = $('.tabContent div');
+      var timeId = null;
+      ali.click(function(){
+        var _this = $(this);
+        // timeId = setTimeout(function(){    //setTimeout();的作用是延迟某一段代码的执行
+          _this.addClass('current').siblings().removeClass('current');     //$(this)方法属于哪个元素，$(this)就是指哪个元素
+          var index = _this.index();   //如果想用一组元素控制另一组元素的显示或者隐藏，需要用到索引
+          aDiv.eq(index).show().siblings().hide();
+        // },300);
+      })
+      // .mouseout(function(){
+      //   clearTimeout(timeId);       //clearTimeout的作用是清除定时器
+      // });
+    });
+    </script>
+    </body>
+    </html>

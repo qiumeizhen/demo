@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择卡</title>
+</head>
+<style>
+*{margin: 0;padding: 0;list-style: none}
+	.tabs{
+		overflow: hidden;
+		width: 200px;
+		height: 300px;
+	}
+	.tabs ul{
+		overflow: hidden;
+	}
+	.tabs li{
+		float: left;
+		width: 33%;
+		height: 30px;
+		text-align: center;
+	}
+	.tabs li a{
+		height: 30px;
+		display: block;
+	}
+	.tabs li.active{
+		background: #eee;
+	}
+	.tab-pane{
+		width: 200px;
+		height: 270px;
+		background: #eee;
+	}
+	.tab-pane.active{
+		display: block;
+	}
+</style>
+<body>
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab-1">1</a></li>
+			<li><a href="#tab-2">2</a></li>
+			<li><a href="#tab-3">3</a></li>
+		</ul>
+		<div class="tab-pane" id="tab-1">1</div>
+		<div class="tab-pane" id="tab-2">2</div>
+		<div class="tab-pane" id="tab-3">3</div>
+	</div>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		function tabsClick(){
+			$(".tabs li:first-child").addClass('active');
+			$(".tab-pane").find('.tab-pane:not(:first-chlid)').hide();
+			// clickTabsLi()
+		}
+		function clickTabsLi(index){
+		}
+		$(".tabs li").click(function(){
+			var li = $(".tabs li");
+			var href = $(".tabs li").attr("href");
+			// $(this).href
+			for (var i = 0; i <= length; i++) {
+				return i;
+			};
+		})
+		tabsClick();
+	})
+
+</script>
+</body>
+</html>

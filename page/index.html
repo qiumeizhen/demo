@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+.module-pages-select{height:20px; line-height:20px;color:#999;}
+.module-pages-select span{border-radius:5px;-webkit-border-radius:display:block;height:20px; float:left; margin:0 5px;}
+.module-pages-select .prev-btn,.module-pages-select .next-btn{border:1px solid #e6e6e6;cursor:pointer;padding:0 5px; color:#fa6e00;}
+.module-pages-select .no-disable{color:#ccc; cursor:default;}
+.module-pages-select .pages-list a{border-radius:5px;-webkit-border-radius:5px; display:block;height:20px;width:20px; text-align:center;float:left;margin:0 2px;border:1px solid #e6e6e6; color:#666;}
+.module-pages-select .pages-list a.selected{ background:#fce3c5;border-color:#fa6e00; color:#fa6e00;}
+.module-pages-select .pages-list b{ float:left; font-family:verdana;color:#999;}
+.module-pages-select span.pages-size{border:1px solid #fff;color:#999;}
+.module-pages-select span.pages-size i{font-style:normal;}
+
+.module-pages-select input{ position:relative;top:1px; margin:0 2px;width:20px;height:16px;_height:15px;*+height:15px;color:#999;border:1px solid #E6E6E6;border-radius:5px;-webkit-border-radius:5px; text-align:center;}
+.module-pages-select .goto-page a{color:#999;border:1px solid #E6E6E6; margin-left:5px; padding:1px 3px;*+padding:1px 3px 0;border-radius:5px;-webkit-border-radius:5px;}
+
+</style>
+<body>
+	<div class="J_SelectPage module-pages-select" data-current-page="1" data-total-page="52">
+    <span class="prev-btn no-disable">上一页</span>
+    <span class="pages-list">
+    </span>
+    <span class="next-btn">下一页</span>
+    <span class="pages-size">共<em><i>1</i>/<i>10</i></em>页</span>
+    <span class="goto-page">到第<input type="text" value="1" />页<a href="javascript:void(0);">确定</a></span>
+</div>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/page.js"></script>
+<script type="text/javascript">
+	$(function(){
+        /*创建一个分页*/
+        var selectPage=new SelectPage({
+                                        pageNode:$(".J_SelectPage").eq(0),//这里传入一个分页节点对象
+                                        insertBox:$("#pageContetReload"),//这里传入一个需要插入内容的目标
+                                        pageUrl:"http://www.pinzhi365.com"//这里是请求的url
+                                    });
+    });
+</script>
+</body>
+</html>
